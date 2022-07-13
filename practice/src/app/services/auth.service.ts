@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  apiurl='https://reqres.in/api/users';
+  apiurl='https://reqres.in/api/login';
 
   constructor(private http:HttpClient) { }
   ProceedLogin(usercred:any){

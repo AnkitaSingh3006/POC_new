@@ -20,15 +20,12 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   responsedata: any;
-  Response = {
-    "token": "QpwL5tke4Pnpja7X4"
-  }
   ProceedLogin() {
     if (this.login.valid) {
       this.service.ProceedLogin(this.login.value).subscribe(result => {
         if (result != null) {
           this.responsedata = result;
-          localStorage.setItem('token',this.Response.token)
+          localStorage.setItem('token',this.responsedata.token)
           alert('Login form is working')
         }
       })
