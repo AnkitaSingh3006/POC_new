@@ -9,7 +9,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private service:AuthService) { }
+  constructor(private service: AuthService) { }
 
   login = new FormGroup({
     "email": new FormControl("", Validators.required),
@@ -20,16 +20,19 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   responsedata: any;
+  Response = {
+    "token": "QpwL5tke4Pnpja7X4"
+  }
   ProceedLogin() {
     if (this.login.valid) {
       this.service.ProceedLogin(this.login.value).subscribe(result => {
-        if(result != null){
+        if (result != null) {
           this.responsedata = result;
-          localStorage.setItem('token','QpwL5tke4Pnpja7X4')
+          localStorage.setItem('token',this.Response.token)
           alert('Login form is working')
         }
       })
-     }
+    }
   }
 
 }
