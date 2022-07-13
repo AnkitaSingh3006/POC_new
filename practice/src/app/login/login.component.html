@@ -1,0 +1,17 @@
+
+<section class="sample-app-content">
+    <form [formGroup]="login" (ngSubmit)="ProceedLogin()">
+        <h1>Login Form</h1>
+        <div>
+            <label>Email</label><br>
+            <input type="text" formControlName="email" placeholder="Enter you email id" autocomplete="off">
+        </div>
+        <div>
+            <label>Password</label><br>
+            <input type="password" formControlName="password" placeholder="Enter your password" autocomplete="off">
+        </div>
+        <div class="submitBtn">
+            <button type="submit">Login</button>
+        </div>
+    </form>
+</section>

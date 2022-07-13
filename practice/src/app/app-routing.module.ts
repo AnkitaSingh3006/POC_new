@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './shared/auth.guard';
 
 
 const routes: Routes = [
@@ -10,7 +11,7 @@ const routes: Routes = [
   {
     path: 'user', loadChildren: () => import('./user/user.module')
     .then(mod => mod.UserModule)
-  }
+  },
 ];
 
 @NgModule({
