@@ -29,7 +29,10 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('token', this.responsedata.token)
           this.route.navigate(['home']);  
           alert('Form is Working')
+        }else{
+          console.log('error')
         }
+        
       })
     }
   }
