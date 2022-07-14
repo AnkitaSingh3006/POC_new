@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private service: AuthService) { }
+  constructor(private service: AuthService, private route:Router) { }
 
   login = new FormGroup({
     "email": new FormControl("", Validators.required),
@@ -25,8 +26,9 @@ export class LoginComponent implements OnInit {
       this.service.ProceedLogin(this.login.value).subscribe(result => {
         if (result != null) {
           this.responsedata = result;
-          localStorage.setItem('token',this.responsedata.token)
-          alert('Login form is working')
+          localStorage.setItem('token', this.responsedata.token)
+          this.route.navigate(['home']);  
+          alert('Form is Working')
         }
       })
     }

@@ -9,6 +9,8 @@ import { InterceptorInterceptor } from './interceptor.interceptor';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule} from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { TokenInterceptorService } from './services/token-interceptor.service';
 
 
 @NgModule({
@@ -16,15 +18,17 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     LocalstorageComponent,
     LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: InterceptorInterceptor, multi: true} ],
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true} ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

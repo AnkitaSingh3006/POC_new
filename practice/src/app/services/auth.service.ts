@@ -11,4 +11,10 @@ export class AuthService {
   ProceedLogin(usercred:any){
    return this.http.post(this.apiurl,usercred)
   }
+  IsLoggedIn(){
+    return localStorage.getItem('token')!=null;
+  }
+  GetToken(){
+    return localStorage.getItem('token')||'';
+   }
 }
