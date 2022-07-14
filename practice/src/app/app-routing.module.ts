@@ -8,17 +8,17 @@ import { AuthGuard } from './services/auth.guard';
 const routes: Routes = [
   {
     path: 'admin', loadChildren: () => import('./admin/admin.module')
-    .then(mod => mod.AdminModule)
+      .then(mod => mod.AdminModule)
   },
   {
     path: 'user', loadChildren: () => import('./user/user.module')
-    .then(mod => mod.UserModule)
+      .then(mod => mod.UserModule)
   },
   {
-    path: 'home',component:HomeComponent,canActivate:[AuthGuard]
+    path: 'home', component: HomeComponent, canActivate: [AuthGuard]
   },
   {
-    path: 'login',component:LoginComponent
+    path: 'login', component: LoginComponent
   }
 ];
 

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private service: AuthService, private route:Router) { }
+  constructor(private service: AuthService, private route: Router) { }
 
   login = new FormGroup({
     "email": new FormControl("", Validators.required),
@@ -27,12 +27,12 @@ export class LoginComponent implements OnInit {
         if (result != null) {
           this.responsedata = result;
           localStorage.setItem('token', this.responsedata.token)
-          this.route.navigate(['home']);  
+          this.route.navigate(['home']);
           alert('Form is Working')
-        }else{
+        } else {
           console.log('error')
         }
-        
+
       })
     }
   }

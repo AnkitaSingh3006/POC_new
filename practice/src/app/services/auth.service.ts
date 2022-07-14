@@ -5,16 +5,16 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  apiurl='https://reqres.in/api/login';
+  apiurl = 'https://reqres.in/api/login';
 
-  constructor(private http:HttpClient) { }
-  ProceedLogin(usercred:any){
-   return this.http.post(this.apiurl,usercred)
+  constructor(private http: HttpClient) { }
+  ProceedLogin(usercred: any) {
+    return this.http.post(this.apiurl, usercred)
   }
-  IsLoggedIn(){
-    return localStorage.getItem('token')!=null;
+  IsLoggedIn() {
+    return localStorage.getItem('token') != null;
   }
-  GetToken(){
-    return localStorage.getItem('token')||'';
-   }
+  GetToken() {
+    return localStorage.getItem('token') || '';
+  }
 }

@@ -8,7 +8,7 @@ import { AuthService } from './auth.service';
 })
 export class TokenInterceptorService implements HttpInterceptor {
 
-  constructor (private inject:Injector){}
+  constructor(private inject: Injector) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     let authservice = this.inject.get(AuthService);

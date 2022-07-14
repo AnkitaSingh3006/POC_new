@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { LocalstorageComponent } from './localstorage/localstorage.component';
 import { InterceptorInterceptor } from './interceptor.interceptor';
 import { LoginComponent } from './login/login.component';
-import { ReactiveFormsModule} from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { TokenInterceptorService } from './services/token-interceptor.service';
@@ -28,7 +28,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true} ],
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
