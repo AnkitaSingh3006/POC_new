@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
         if (result != null) {
           this.responsedata = result;
           localStorage.setItem('token', this.responsedata.token)
-          this.route.navigateByUrl('home');
+          this.route.navigate(['home']);
           alert('Form is Working')
         } else {
           console.log('error')
