@@ -12,8 +12,9 @@ export class AuthService {
     return this.http.post(this.apiurl, usercred)
   }
   IsLoggedIn() {
-    return localStorage.getItem('token') != null;
+    return localStorage.getItem('token');
   }
+  
   GetToken() {
     return localStorage.getItem('token') || '';
   }
